@@ -113,9 +113,6 @@ function loadScenario() {
     document.querySelector(".report-btn").disabled = false;
     document.querySelector(".click-btn").disabled = false;
 }
-/* ===========================================
-   PART 2 - Decision Logic
-=========================================== */
 
 function showResult(correct) {
     
@@ -217,9 +214,6 @@ function clickLink() {
     showResult(false);
 
 }
-/* ===========================================
-   PART 3 - Quiz
-=========================================== */
 
 function showQuiz() {
 
@@ -282,9 +276,6 @@ function showQuiz() {
     });
 
 }
-/* ===========================================
-   PART 4 - Next Scenario
-=========================================== */
 
 function nextScenario() {
 
@@ -300,10 +291,6 @@ function nextScenario() {
     loadScenario();
 
 }
-
-/* ===========================================
-   PART 5 - Completion
-=========================================== */
 
 function showCompletion() {
 
