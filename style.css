@@ -1,0 +1,1159 @@
+/* ===========================================
+   PhishShield v1.0
+   Part 1 - Global, Header, Hero, Dashboard,
+   Progress Bar
+=========================================== */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* ---------- HEADINGS ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+p {
+    color: #cbd5e1;
+}
+
+/* ---------- LINKS ---------- */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ---------- BUTTON ---------- */
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    transition: .3s;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+
+    background: #111827;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .25);
+
+}
+
+.logo {
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: #38bdf8;
+
+}
+
+.logo span {
+
+    color: #ffffff;
+
+}
+
+.tagline {
+
+    margin-top: 10px;
+
+    color: #94a3b8;
+
+    font-size: 1rem;
+
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+
+    max-width: 900px;
+
+    margin: 50px auto;
+
+    padding: 0 20px;
+
+    text-align: center;
+
+}
+
+.hero h1 {
+
+    font-size: 3rem;
+
+    margin-bottom: 20px;
+
+    color: #38bdf8;
+
+}
+
+.hero p {
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: #cbd5e1;
+
+}
+
+/* ---------- DASHBOARD ---------- */
+
+.dashboard {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+
+}
+
+/* Dashboard Card */
+
+.card {
+
+    background: #1e293b;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    transition: .3s;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .20);
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #38bdf8;
+
+}
+
+.card h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 1rem;
+
+    color: #94a3b8;
+
+}
+
+.card p {
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    color: #38bdf8;
+
+}
+
+/* ---------- DIFFICULTY BADGES ---------- */
+
+.difficulty {
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    font-weight: 600;
+
+    font-size: .9rem;
+
+}
+
+.easy {
+
+    background: #166534;
+
+    color: #dcfce7;
+
+}
+
+.medium {
+
+    background: #854d0e;
+
+    color: #fef3c7;
+
+}
+
+.hard {
+
+    background: #991b1b;
+
+    color: #fee2e2;
+
+}
+
+/* ---------- PROGRESS ---------- */
+
+.progress-section {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 40px auto;
+
+}
+
+.progress-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 12px;
+
+    font-weight: 600;
+
+}
+
+.progress-container {
+
+    width: 100%;
+
+    height: 18px;
+
+    background: #1e293b;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+#progress-bar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: linear-gradient(90deg, #06b6d4, #3b82f6);
+
+    border-radius: 50px;
+
+    transition: width .5s ease;
+
+}
+
+/* ---------- UTILITIES ---------- */
+
+.hidden {
+
+    display: none;
+
+}
+
+.center {
+
+    text-align: center;
+
+}
+
+/* ===========================================
+   PhishShield v1.0
+   Part 2 - Email Card, Buttons,
+   Result Card, Red Flags,
+   Security Tips
+=========================================== */
+
+/* ---------- EMAIL CARD ---------- */
+
+.email-card {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    background: #1e293b;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, .08);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+
+}
+
+.email-header {
+
+    margin-bottom: 20px;
+
+}
+
+.email-header h2 {
+
+    color: #38bdf8;
+
+    font-size: 1.8rem;
+
+}
+
+.email-info {
+
+    margin-bottom: 20px;
+
+}
+
+.email-info p {
+
+    margin: 10px 0;
+
+    color: #e2e8f0;
+
+}
+
+.email-info strong {
+
+    color: #38bdf8;
+
+}
+
+.email-body {
+
+    margin: 25px 0;
+
+    padding: 20px;
+
+    background: #0f172a;
+
+    border-radius: 12px;
+
+    border-left: 5px solid #38bdf8;
+
+}
+
+.email-body p {
+
+    white-space: pre-line;
+
+    color: #e2e8f0;
+
+    line-height: 1.8;
+
+}
+
+.email-action {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+}
+
+.email-button {
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 14px 28px;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+}
+
+.email-button:hover {
+
+    background: #1d4ed8;
+
+    transform: scale(1.05);
+
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+
+.action-buttons {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 30px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+.report-btn {
+
+    background: #16a34a;
+
+    color: white;
+
+    padding: 16px 35px;
+
+    border-radius: 12px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    min-width: 220px;
+
+}
+
+.report-btn:hover {
+
+    background: #15803d;
+
+    transform: translateY(-3px);
+
+}
+
+.click-btn {
+
+    background: #dc2626;
+
+    color: white;
+
+    padding: 16px 35px;
+
+    border-radius: 12px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    min-width: 220px;
+
+}
+
+.click-btn:hover {
+
+    background: #b91c1c;
+
+    transform: translateY(-3px);
+
+}
+
+/* ---------- RESULT CARD ---------- */
+
+.result-card {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    display: none;
+
+    text-align: center;
+
+    animation: fadeIn .5s ease;
+
+}
+
+.result-success {
+
+    background: #14532d;
+
+    border: 2px solid #22c55e;
+
+}
+
+.result-error {
+
+    background: #7f1d1d;
+
+    border: 2px solid #ef4444;
+
+}
+
+.result-card h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+
+}
+
+#result-score {
+
+    font-size: 1.4rem;
+
+    font-weight: 700;
+
+    color: #facc15;
+
+    margin-bottom: 15px;
+
+}
+
+#result-message {
+
+    color: #f8fafc;
+
+    line-height: 1.8;
+
+    margin-bottom: 25px;
+
+}
+
+/* ---------- RED FLAGS ---------- */
+
+.redflags {
+
+    background: #0f172a;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-top: 20px;
+
+    text-align: left;
+
+}
+
+.redflags h3 {
+
+    color: #f87171;
+
+    margin-bottom: 15px;
+
+}
+
+#redFlagsList {
+
+    list-style: none;
+
+    padding-left: 0;
+
+}
+
+#redFlagsList li {
+
+    margin: 10px 0;
+
+    color: #e2e8f0;
+
+    font-size: .95rem;
+
+}
+
+#redFlagsList li::before {
+
+    content: "✔ ";
+
+    color: #22c55e;
+
+    font-weight: bold;
+
+}
+
+/* ---------- SECURITY TIP ---------- */
+
+.security-tip {
+
+    margin-top: 25px;
+
+    background: #082f49;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    border-left: 5px solid #38bdf8;
+
+}
+
+.security-tip h3 {
+
+    color: #38bdf8;
+
+    margin-bottom: 12px;
+
+}
+
+.security-tip p {
+
+    color: #e2e8f0;
+
+}
+
+/* ---------- NEXT BUTTON ---------- */
+
+#nextButton {
+
+    margin-top: 30px;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 15px 35px;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+}
+
+#nextButton:hover {
+
+    background: #1d4ed8;
+
+    transform: translateY(-3px);
+
+}
+
+/* ---------- HORIZONTAL LINE ---------- */
+
+hr {
+
+    border: none;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, .1);
+
+    margin: 20px 0;
+
+}
+
+/* ---------- ANIMATION ---------- */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ===========================================
+   PhishShield v1.0
+   Part 3 - Quiz, Warning Signs,
+   Completion Screen, Footer,
+   Responsive Design
+=========================================== */
+
+/* ---------- QUIZ ---------- */
+
+.quiz-section {
+
+    width: 90%;
+    max-width: 900px;
+    margin: 60px auto;
+    background: #1e293b;
+    padding: 35px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+.quiz-section h2 {
+
+    color: #38bdf8;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+#quiz-question {
+
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+
+}
+
+.quiz-buttons {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.quiz-buttons button {
+
+    background: #334155;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+
+}
+
+.quiz-buttons button:hover {
+
+    background: #3b82f6;
+    transform: translateY(-2px);
+
+}
+
+/* ---------- WARNING SECTION ---------- */
+
+.warning-section {
+
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+
+}
+
+.warning-section h2 {
+
+    text-align: center;
+    color: #38bdf8;
+    margin-bottom: 30px;
+
+}
+
+.warning-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+
+}
+
+.warning-card {
+
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, .08);
+    transition: .3s;
+
+}
+
+.warning-card:hover {
+
+    transform: translateY(-5px);
+    border-color: #ef4444;
+
+}
+
+/* ---------- COMPLETION CARD ---------- */
+
+.completion-card {
+
+    width: 90%;
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 40px;
+    background: #1e293b;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #22c55e;
+    display: none;
+
+}
+
+.completion-card h1 {
+
+    color: #22c55e;
+    margin-bottom: 25px;
+
+}
+
+.completion-card p {
+
+    font-size: 1.2rem;
+    margin: 15px 0;
+
+}
+
+.completion-card strong {
+
+    color: #38bdf8;
+
+}
+
+.completion-card button {
+
+    margin-top: 30px;
+    background: #2563eb;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+.completion-card button:hover {
+
+    background: #1d4ed8;
+    transform: translateY(-3px);
+
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+
+    margin-top: 70px;
+    background: #111827;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+
+}
+
+footer h3 {
+
+    color: #38bdf8;
+    margin-bottom: 10px;
+
+}
+
+footer p {
+
+    margin: 8px 0;
+    color: #94a3b8;
+
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #0f172a;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #3b82f6;
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #2563eb;
+
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:992px) {
+
+    .hero h1 {
+
+        font-size: 2.4rem;
+
+    }
+
+    .dashboard {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .email-card {
+
+        padding: 25px;
+
+    }
+
+    .action-buttons {
+
+        flex-direction: column;
+
+    }
+
+    .report-btn,
+    .click-btn {
+
+        width: 100%;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .hero {
+
+        margin: 40px auto;
+
+    }
+
+    .hero h1 {
+
+        font-size: 2rem;
+
+    }
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .card {
+
+        padding: 20px;
+
+    }
+
+    .progress-header {
+
+        font-size: .9rem;
+
+    }
+
+    .email-header h2 {
+
+        font-size: 1.5rem;
+
+    }
+
+    .quiz-section {
+
+        padding: 25px;
+
+    }
+
+    .warning-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+@media(max-width:480px) {
+
+    body {
+
+        font-size: 14px;
+
+    }
+
+    .logo {
+
+        font-size: 1.6rem;
+
+    }
+
+    .hero h1 {
+
+        font-size: 1.7rem;
+
+    }
+
+    .email-card {
+
+        padding: 18px;
+
+    }
+
+    .result-card {
+
+        padding: 20px;
+
+    }
+
+    .completion-card {
+
+        padding: 25px;
+
+    }
+
+    #nextButton {
+
+        width: 100%;
+
+    }
+
+    .completion-card button {
+
+        width: 100%;
+
+    }
+
+}
+
+/* ---------- SMALL ANIMATIONS ---------- */
+
+.card,
+.warning-card,
+.email-card,
+.quiz-section,
+.result-card,
+.completion-card {
+
+    transition: all .3s ease;
+
+}
+
+.email-card:hover {
+
+    transform: translateY(-3px);
+
+}
+
+.quiz-section:hover {
+
+    transform: translateY(-3px);
+
+}
+
+/* ---------- SELECTION ---------- */
+
+::selection {
+
+    background: #2563eb;
+    color: white;
+
+}
+/* Quiz Buttons */
+
+.quiz-btn {
+
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+
+    background: #334155;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: .3s;
+
+}
+
+.quiz-btn:hover {
+
+    background: #2563eb;
+
+}
+
+.quiz-btn:disabled {
+
+    opacity: .7;
+
+    cursor: not-allowed;
+
+}
+#nextButton {
+    display: none;
+    margin: 20px auto 0;
+    padding: 12px 25px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#nextButton:hover {
+    background: #1d4ed8;
+}
+#nextButton {
+    display: block;
+    margin: 20px auto;
+}

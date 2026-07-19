@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishShield | Cybersecurity Awareness Simulator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+            🛡️ <span>PhishShield</span>
+        </div>
+
+        <p class="tagline">
+            Cybersecurity Awareness Training Simulator
+        </p>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h1>Think Before You Click.</h1>
+
+        <p>
+            Learn how to recognize phishing emails,
+            avoid scams, and improve your cybersecurity
+            skills through interactive simulations.
+        </p>
+
+    </section>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="dashboard">
+
+        <div class="card">
+            <h3>🏆 Security Score</h3>
+            <p id="score">0</p>
+        </div>
+
+        <div class="card">
+            <h3>📧 Scenario</h3>
+            <p>
+                <span id="scenario-number">1</span> /
+                <span id="total-scenarios">20</span>
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🏢 Company</h3>
+            <p id="company">PayPal</p>
+        </div>
+
+        <div class="card">
+            <h3>⚡ Difficulty</h3>
+            <span id="difficulty" class="difficulty easy">
+                Easy
+            </span>
+        </div>
+
+    </section>
+
+    <!-- ================= PROGRESS ================= -->
+
+    <section class="progress-section">
+
+        <div class="progress-header">
+
+            <span>Training Progress</span>
+
+            <span id="progress-text">0%</span>
+
+        </div>
+
+        <div class="progress-container">
+
+            <div id="progress-bar"></div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= EMAIL ================= -->
+
+    <section class="email-card">
+
+        <div class="email-header">
+
+            <h2>📩 Incoming Email</h2>
+
+        </div>
+
+        <div class="email-info">
+
+            <p>
+                <strong>From:</strong>
+                <span id="sender"></span>
+            </p>
+
+            <p>
+                <strong>Subject:</strong>
+                <span id="subject"></span>
+            </p>
+
+        </div>
+
+        <hr>
+
+        <div class="email-body">
+
+            <p id="emailBody"></p>
+
+        </div>
+
+        <div class="email-action">
+
+            <button id="fakeLink" class="email-button"></button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ACTION BUTTONS ================= -->
+
+    <section class="action-buttons">
+
+        <button class="report-btn" onclick="reportPhishing()">
+
+            🚨 Report Phishing
+
+        </button>
+
+        <button class="click-btn" onclick="clickLink()">
+
+            ⚠ Click Link
+
+        </button>
+
+    </section>
+
+    <!-- ================= RESULT ================= -->
+    
+    <section id="result-card" class="result-card hidden">
+    
+        <h2 id="result-title"></h2>
+    
+        <p id="result-score"></p>
+    
+        <p id="result-message"></p>
+    
+        <div class="redflags">
+    
+            <h3>🔎 Red Flags</h3>
+    
+            <ul id="redFlagsList"></ul>
+    
+        </div>
+    
+        <div class="security-tip">
+    
+            <h3>💡 Security Tip</h3>
+    
+            <p id="securityTip"></p>
+    
+        </div>
+    
+    </section>
+    
+    <!-- ================= QUIZ ================= -->
+    
+    <section class="quiz-section" id="quiz-section" style="display:none;">
+    
+        <h2>📝 Quick Knowledge Check</h2>
+    
+        <p id="quiz-question"></p>
+    
+        <div id="quiz-options"></div>
+    
+        <div id="quiz-feedback"></div>
+    
+        <button id="nextButton" onclick="nextScenario()" style="display:none;margin-top:20px;">
+            Next Email →
+        </button>
+    
+    </section>
+
+    <!-- ================= WARNING SIGNS ================= -->
+
+    <section class="warning-section">
+
+        <h2>⚠ Common Warning Signs</h2>
+
+        <div class="warning-grid">
+
+            <div class="warning-card">
+                🚩 Urgent language
+            </div>
+
+            <div class="warning-card">
+                🚩 Misspelled domains
+            </div>
+
+            <div class="warning-card">
+                🚩 Unexpected attachments
+            </div>
+
+            <div class="warning-card">
+                🚩 Requests for passwords
+            </div>
+
+            <div class="warning-card">
+                🚩 Suspicious links
+            </div>
+
+            <div class="warning-card">
+                🚩 Threats or rewards
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= COMPLETION ================= -->
+
+    <section id="completion-card" class="completion-card hidden">
+
+        <h1>🎉 Training Completed!</h1>
+
+        <p>
+
+            Final Score:
+            <strong id="finalScore"></strong>
+
+        </p>
+
+        <p>
+
+            Accuracy:
+            <strong id="accuracy"></strong>
+
+        </p>
+
+        <p>
+
+            Rank:
+            <strong id="rank"></strong>
+
+        </p>
+
+        <button onclick="restartTraining()">
+
+            Restart Training
+
+        </button>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>🛡️ PhishShield v1.0</h3>
+
+        <p>
+
+            Interactive Cybersecurity Awareness Simulator
+
+        </p>
+
+        <p>
+
+            Developed by <strong>Mahesha</strong>
+
+        </p>
+
+        <p>
+
+            For Educational Purposes Only
+
+        </p>
+
+        <p>
+
+            © 2026 All Rights Reserved
+
+        </p>
+
+    </footer>
+
+    <script src="scenarios.js"></script>
+    <script src="quiz.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
