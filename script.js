@@ -1,9 +1,4 @@
-/* ===========================================
-   PhishShield v1.0
-   Simple Version
-=========================================== */
-
-// Current position
+//Phishshield
 let answered = false;
 
 let currentScenario = 0;
