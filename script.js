@@ -188,13 +188,13 @@ function showResult(correct) {
     resultCard.style.display = "none";
     showQuiz();
 
-    }, 2000);
+    }, 10000);
     
     setTimeout(() => {
 
     resultCard.style.display = "none";
         showQuiz();
-    }, 2000);
+    }, 10000);
 }
 
 // User clicked Report Phishing
